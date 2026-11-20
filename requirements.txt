@@ -1,0 +1,8 @@
+# Core dependencies for the AcneVision AI dataset pipeline (CPU-only, no GPU).
+# Versions pinned to what this project was developed and tested against.
+datasets==5.2.0
+pillow==13.0.0
+pyarrow==26.0.1
+numpy==2.5.5
+pandas==3.1.1
+tqdm==4.70.1

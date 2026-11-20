@@ -3,8 +3,25 @@
 venv/
 env/
 
-# Datasets / downloaded data (regenerable via download_dataset.py)
-data/
+# Datasets / downloaded data (raw shards + processed images are large & regenerable)
+# Anchored to repo root so it does NOT match the src/acnevision/data/ package.
+/data/
+# Belt-and-suspenders: never commit large data artifacts even if placed elsewhere
+*.arrow
+
+# Trained models / checkpoints (regenerable, large) — keep the folders, not contents
+models/checkpoints/*
+!models/checkpoints/.gitkeep
+models/trained/*
+!models/trained/.gitkeep
+
+# Generated outputs — keep the folders, not contents
+outputs/figures/*
+!outputs/figures/.gitkeep
+outputs/predictions/*
+!outputs/predictions/.gitkeep
+outputs/logs/*
+!outputs/logs/.gitkeep
 
 # Python bytecode / caches
 __pycache__/
