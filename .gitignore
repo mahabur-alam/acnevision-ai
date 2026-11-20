@@ -1,0 +1,37 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Datasets / downloaded data (regenerable via download_dataset.py)
+data/
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Distribution / build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environment / secrets
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
