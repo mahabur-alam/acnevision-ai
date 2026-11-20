@@ -5,6 +5,7 @@
 # Running the tests
 pytest
 
-# Running the notebooks (notebooks/*.ipynb)
+# Running the notebooks (notebooks/*.ipynb) and the EDA charts
 jupyter
 matplotlib
+seaborn

@@ -29,6 +29,7 @@ lesion-level bounding boxes.
 See [docs/dataset_documentation.md](docs/dataset_documentation.md) for the full
 schema, severity distribution, citation, and usage restrictions.
 
+<!--
 ## Project structure
 
 ```text
@@ -52,6 +53,7 @@ acnevision-ai/
 ├── requirements-dev.txt
 └── README.md
 ```
+-->
 
 ## Installation
 
@@ -66,6 +68,7 @@ pip install -r requirements.txt
 pip install -r requirements-dev.txt
 ```
 
+<!--
 ## Getting the dataset
 
 The dataset is **not** committed to git. Download it from Hugging Face:
@@ -136,10 +139,13 @@ dataset.
 
 These correspond to the placeholder packages under `src/acnevision/` and have no
 implementation yet.
+-->
 
+<!--
 ## License & data use
 
 The **code** in this repository is yours to license as you wish. The **ACNE04
 dataset is academic / research use only and must not be used commercially** — this
 project does not change those terms. See
 [docs/dataset_documentation.md](docs/dataset_documentation.md).
+-->
