@@ -52,3 +52,7 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Ultralytics / YOLO stray run outputs and auto-downloaded pretrained weights
+runs/
+*.pt

@@ -1,4 +1,7 @@
-"""AcneVision AI — restoration (placeholder).
+"""AcneVision AI — blemish removal (restoration).
 
-Reserved for future development. No models are implemented yet.
+Modules
+-------
+inpaint
+    Remove detected lesions by OpenCV inpainting (CPU, classical, no training).
 """

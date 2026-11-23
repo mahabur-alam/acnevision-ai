@@ -6,3 +6,11 @@ pyarrow==26.0.1
 numpy==2.5.5
 pandas==3.1.1
 tqdm==4.70.1
+
+# --- Detection / restoration (CPU only) ---------------------------------------
+# IMPORTANT: install the CPU torch wheels, never CUDA. From the repo root run:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt
+# ultralytics pulls torch/torchvision (and opencv-python, used for inpainting);
+# the index-url line above pins torch/torchvision to the CPU build.
+ultralytics==8.4.216

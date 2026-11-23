@@ -5,8 +5,12 @@ of the project establishes a clean, reliable **dataset-preparation pipeline** an
 scalable project structure for future work. Everything runs on **CPU — no GPU is
 required**.
 
-> **Status:** dataset preparation only. Detection, classification, and image
-> restoration are **not implemented yet** — they are planned (see the roadmap).
+> **Status:** dataset preparation + **full EDA** complete, and the end-to-end
+> pipeline is implemented — **lesion detection** (YOLO11), **severity grading**
+> (Hayashi count thresholds), and **blemish removal** (OpenCV inpainting). A trained
+> detector checkpoint is produced by `scripts/train_detector.py` (CPU). See the EDA
+> report in [docs/acne04_eda_report.md](docs/acne04_eda_report.md) and the pipeline
+> notes in [docs/detection.md](docs/detection.md).
 
 ## Objectives
 
@@ -62,11 +66,31 @@ acnevision-ai/
 python3 -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 
-# 2. Install dependencies (CPU-only)
+# 2. Install the CPU-only PyTorch build FIRST (never CUDA), then the rest
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
 # For tests + notebooks as well:
 pip install -r requirements-dev.txt
 ```
+
+## Pipeline usage (detection → grading → restoration)
+
+All steps run on CPU. See [docs/detection.md](docs/detection.md) for details.
+
+```bash
+# 1. Build the YOLO dataset from the processed annotations (labels + data.yaml)
+python scripts/prepare_yolo_dataset.py                 # uses the default 'split'
+
+# 2. Train the detector (YOLO11s @ 960 is the recommended, slow-on-CPU default)
+python scripts/train_detector.py                       # or add --model yolo11n.pt
+
+# 3. Run the full pipeline on a face image
+python scripts/run_pipeline.py --image face.jpg \
+    --weights models/trained/acne_yolo11s_960/weights/best.pt --restore
+```
+
+Severity grading needs no training — it maps the detected lesion count to a class
+with the Hayashi thresholds and reproduces the dataset's own labels exactly.
 
 <!--
 ## Getting the dataset

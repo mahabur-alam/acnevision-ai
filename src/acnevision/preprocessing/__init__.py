@@ -1,4 +1,8 @@
-"""AcneVision AI — preprocessing (placeholder).
+"""AcneVision AI — preprocessing.
 
-Reserved for future development. No models are implemented yet.
+Modules
+-------
+transforms
+    Letterbox resizing (to the EDA-chosen 960 px) shared by training and
+    inference, plus the CPU-friendly default training hyper-parameters.
 """

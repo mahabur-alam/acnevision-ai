@@ -1,4 +1,8 @@
-"""AcneVision AI — classification (placeholder).
+"""AcneVision AI — severity classification.
 
-Reserved for future development. No models are implemented yet.
+Modules
+-------
+severity
+    Grade acne severity from a lesion count using the Hayashi thresholds
+    (training-free; reproduces the ACNE04 labels exactly).
 """
